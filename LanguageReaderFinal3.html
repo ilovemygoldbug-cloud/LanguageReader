@@ -208,9 +208,21 @@
     }
 
     // ---- Flexible text parser ----
-    function tokenizeFromText(s){
-      return String(s||'').match(/[\p{L}\p{M}\p{N}]+|[¿¡"'"()«»\[\]\-—–,…,:;.!?]/gu) || [];
-    }
+  // Treat words as letters/digits with optional internal apostrophes (straight or curly) or hyphens
+// Examples that become single tokens: c'erano, l’uomo, dell’arte, 'tis, rock-'n'-roll
+function tokenizeFromText(s){
+  // Apostrophe-like joiners we’ll accept inside words:
+  // ' (U+0027), ’ (U+2019), ‘ (U+2018), ʼ (U+02BC), ′ (U+2032), ´ (U+00B4), ʹ (U+02B9)
+  const APOS = "[\\u0027\\u2019\\u2018\\u02BC\\u2032\\u00B4\\u02B9]";
+  const WORD  = new RegExp(
+    "(?:[\\p{L}\\p{M}\\p{N}]+|" + APOS + "[\\p{L}\\p{M}\\p{N}]+)(?:(?:" + APOS + "|-)[\\p{L}\\p{M}\\p{N}]+)*",
+    "u"
+  );
+  // Keep punctuation separate; exclude the apos characters so they don’t become solo tokens.
+  const PUNCT = /[¿¡"“”()«»\[\]—–,…,:;.!?]/u;
+  const TOKENS = new RegExp(`${WORD.source}|${PUNCT.source}`, "gu");
+  return String(s||"").match(TOKENS) || [];
+}
     function parseFlexible(text){
       const trimmed=(text||'').replace(/^\uFEFF/,'').trim();
       if(!trimmed) return [];
@@ -709,7 +721,7 @@ useEffect(() => {
       }
 
       function clearLexicon() {
-        if (!confirm('Clear the current lexicon from memory? This will also clear the cached copy. (Your file on disk will NOT be modified.)')) return;
+        //if (!confirm('Clear the current lexicon from memory? This will also clear the cached copy. (Your file on disk will NOT be modified.)')) return;
         setLexHandle(null);
         setLexMap(new Map());
         setDetectedLang(null);
@@ -722,7 +734,7 @@ useEffect(() => {
       }
 
       function clearText() {
-        if (!confirm('Clear the loaded text/story from the reader?')) return;
+        //if (!confirm('Clear the loaded text/story from the reader?')) return;
         setSentences([]);
         setTextName('');
         setActive(null);
