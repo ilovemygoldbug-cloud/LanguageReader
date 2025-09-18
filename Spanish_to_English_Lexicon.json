@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "source": "unified",
+    "version": 2,
+    "language": "en",
+    "nativeLang": "es"
+  },
+  "entries": [
+    { "term": "house", "english": ["casa"], "status": 1, "scope": "form", "notes": "" },
+    { "term": "book", "english": ["libro"], "status": 1, "scope": "form", "notes": "" },
+    { "term": "water", "english": ["agua"], "status": 1, "scope": "form", "notes": "" },
+    { "term": "eat", "english": ["comer"], "status": 1, "scope": "form", "notes": "" },
+    { "term": "drink", "english": ["beber"], "status": 1, "scope": "form", "notes": "" },
+    { "term": "go", "english": ["ir"], "status": 1, "scope": "form", "notes": "" },
+    { "term": "come", "english": ["venir"], "status": 1, "scope": "form", "notes": "" },
+    { "term": "see", "english": ["ver"], "status": 1, "scope": "form", "notes": "" },
+    { "term": "friend", "english": ["amigo"], "status": 1, "scope": "form", "notes": "" },
+    { "term": "family", "english": ["familia"], "status": 1, "scope": "form", "notes": "" }
+  ]
+}
