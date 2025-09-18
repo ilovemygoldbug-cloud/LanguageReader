@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "source": "unified",
+    "version": 2,
+    "language": "es",
+    "nativeLang": "it"
+  },
+  "entries": [
+    {
+      "term": "acqua",
+      "english": [
+        "agua"
+      ],
+      "status": 1,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "amico",
+      "english": [
+        "amigo"
+      ],
+      "status": 1,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "anno",
+      "english": [
+        "año"
+      ],
+      "status": 1,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "Aventura",
+      "english": [
+        "Aventura"
+      ],
+      "status": 2,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "bambina",
+      "english": [
+        "niña"
+      ],
+      "status": 1,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "bambino",
+      "english": [
+        "niño"
+      ],
+      "status": 1,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "birra",
+      "english": [
+        "cerveza"
+      ],
+      "status": 1,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "buonasera",
+      "english": [
+        "buenas tardes"
+      ],
+      "status": 1,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "buongiorno",
+      "english": [
+        "buenos días"
+      ],
+      "status": 1,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "caffè",
+      "english": [
+        "café"
+      ],
+      "status": 1,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "casa",
+      "english": [
+        "casa",
+        "hogar"
+      ],
+      "status": 3,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "Ciao",
+      "english": [
+        "Hola"
+      ],
+      "status": 2,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "cuchara",
+      "english": [
+        "cucchiaio"
+      ],
+      "status": 2,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "grande",
+      "english": [
+        "grande"
+      ],
+      "status": 4,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "La mia casa",
+      "english": [
+        "Mi casa"
+      ],
+      "status": 2,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "mangiare",
+      "english": [
+        "comer"
+      ],
+      "status": 2,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "vino",
+      "english": [
+        "vino"
+      ],
+      "status": 1,
+      "scope": "form",
+      "notes": ""
+    }
+  ]
+}

@@ -3,7 +3,7 @@
     "source": "unified",
     "version": 2,
     "language": "en",
-    "glossLang": "ko"
+    "nativeLang": "ko"
   },
   "entries": [
     {
@@ -8612,6 +8612,15 @@
       "term": "wear",
       "english": [
         "<Korean for wear>"
+      ],
+      "status": 1,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "Wednesday",
+      "english": [
+        "수요일"
       ],
       "status": 1,
       "scope": "form",
