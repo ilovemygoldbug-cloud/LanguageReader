@@ -8,8 +8,7 @@ This will generate a json file for you to download.
 
 STORIES/TEXTS
 You can generate any texts or stories. Have your AI generate a story or scrape text only off of a website. Text from epubs. whatever you like.
-It works with stories in txt format. Might work better if you convert them to jsonl format, but may not be necessary
-You can convert them via the same GPT listed above. Just give it the text and ask for it to convert to jsonl format.
+It works with stories in txt format. 
 Place stories in desired folder
 
 HTML
