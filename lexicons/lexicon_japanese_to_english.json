@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "source": "unified",
+    "version": 2,
+    "language": "ja",
+    "nativeLang": null
+  },
+  "entries": [
+    {
+      "term": "はじめてのデート",
+      "english": [
+        "First Date"
+      ],
+      "status": 2,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "犬",
+      "english": [
+        "dog"
+      ],
+      "status": 1,
+      "scope": "word",
+      "notes": ""
+    },
+    {
+      "term": "食べる",
+      "english": [
+        "to eat"
+      ],
+      "status": 1,
+      "scope": "word",
+      "notes": ""
+    },
+    {
+      "term": "二人はたくさん話しました",
+      "english": [
+        "The two talked a lot."
+      ],
+      "status": 2,
+      "scope": "form",
+      "notes": ""
+    },
+    {
+      "term": "猫",
+      "english": [
+        "cat"
+      ],
+      "status": 1,
+      "scope": "word",
+      "notes": ""
+    }
+  ]
+}
