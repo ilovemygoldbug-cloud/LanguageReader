@@ -8,7 +8,7 @@
   "entries": [
     {
       "term": "はじめてのデート",
-      "english": [
+      "native": [
         "First Date"
       ],
       "status": 2,
@@ -17,7 +17,7 @@
     },
     {
       "term": "犬",
-      "english": [
+      "native": [
         "dog"
       ],
       "status": 1,
@@ -26,7 +26,7 @@
     },
     {
       "term": "食べる",
-      "english": [
+      "native": [
         "to eat"
       ],
       "status": 1,
@@ -35,7 +35,7 @@
     },
     {
       "term": "二人はたくさん話しました",
-      "english": [
+      "native": [
         "The two talked a lot."
       ],
       "status": 2,
@@ -44,7 +44,7 @@
     },
     {
       "term": "猫",
-      "english": [
+      "native": [
         "cat"
       ],
       "status": 1,
