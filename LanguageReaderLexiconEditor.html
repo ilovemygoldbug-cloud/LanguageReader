@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Lexicon Editor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin="anonymous" src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin="anonymous" src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script crossorigin="anonymous" src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-slate-100">
+  <div id="root"></div>
+
+  <script type="text/babel" data-presets="env,react">
+    const {useMemo,useRef,useState} = React;
+
+    // ----- helpers -----
+    function clamp04(n){ const x = Math.floor(Number(n ?? 1)); return Math.max(0, Math.min(4, x)); }
+    function nfcLower(s){ try { return String(s??'').normalize('NFC').toLowerCase(); } catch { return String(s??'').toLowerCase(); } }
+    const STATUS_NAMES = ['Ignored','New','Seen','Familiar','Known'];
+
+    function validateLexicon(obj){
+      if (!obj || typeof obj !== 'object') throw new Error('File is not a JSON object');
+      if (!Array.isArray(obj.entries)) throw new Error('Missing "entries" array');
+      for (const [i,e] of obj.entries.entries()){
+        if (!e || typeof e !== 'object') throw new Error(`Entry #${i+1} is not an object`);
+        if (typeof e.term !== 'string' || !e.term.trim()) throw new Error(`Entry #${i+1} missing "term" (string)`);
+        const hasNative  = e.native  != null;
+        const hasEnglish = e.english != null; // accept legacy
+        if (!hasNative && !hasEnglish) throw new Error(`Entry #${i+1} must include "native" (preferred) or legacy "english"`);
+        if (hasNative && !Array.isArray(e.native) && typeof e.native !== 'string') {
+          throw new Error(`Entry #${i+1} "native" must be array or string`);
+        }
+        if (hasEnglish && !Array.isArray(e.english) && typeof e.english !== 'string') {
+          throw new Error(`Entry #${i+1} "english" must be array or string`);
+        }
+        if (e.status != null && !Number.isFinite(Number(e.status))) {
+          throw new Error(`Entry #${i+1} "status" must be a number (0..4) if present`);
+        }
+      }
+      return true;
+    }
+
+    function normalizeEntry(e){
+      const defs = Array.isArray(e.native) ? e.native
+                 : Array.isArray(e.english) ? e.english
+                 : typeof e.native  === 'string' ? [e.native.trim()].filter(Boolean)
+                 : typeof e.english === 'string' ? [e.english.trim()].filter(Boolean)
+                 : [];
+      return {
+        term: String(e.term || '').trim(),
+        english: defs.map(String),            // internal canonical array of defs
+        status: clamp04(e.status ?? 1),
+        scope: e.scope || 'word',
+        notes: e.notes || ''
+      };
+    }
+
+    function serializeLexicon(lexicon){
+      // Writes definitions as "native"
+      const entries = (lexicon.entries || []).map(e => ({
+        term: e.term,
+        native: (Array.isArray(e.english) ? e.english : [e.english]).filter(Boolean).map(String),
+        status: clamp04(e.status),
+        scope: e.scope || 'word',
+        notes: e.notes || ''
+      }));
+      const meta = {
+        ...(lexicon.meta || {}),
+        version: 2
+      };
+      return JSON.stringify({ meta, entries }, null, 2);
+    }
+
+    function download(filename, text){
+      const blob = new Blob([text], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = filename; a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // ----- app -----
+    function App(){
+      const [lexicon, setLexicon] = useState(null);
+      const [openFilename, setOpenFilename] = useState('');
+      // filters
+      const [search, setSearch] = useState('');          // global search
+      const [termFilter, setTermFilter] = useState('');
+      const [defFilter, setDefFilter] = useState('');
+      const [statusFilter, setStatusFilter] = useState('all'); // 'all' or '0'..'4'
+      const [scopeFilter, setScopeFilter] = useState('all');   // 'all','word','form','phrase'
+
+      // unified open
+      async function openFile(){
+        try{
+          if (!window.showOpenFilePicker) throw new Error('Your browser does not support the File System Access API.');
+          const [h] = await window.showOpenFilePicker({
+            types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }],
+            multiple: false,
+            excludeAcceptAllOption: true
+          });
+          const f = await h.getFile();
+          const txt = await f.text();
+          let obj;
+          try { obj = JSON.parse(txt); } catch { throw new Error('Not valid JSON.'); }
+          validateLexicon(obj);
+          const norm = { meta: obj.meta || {}, entries: (obj.entries || []).map(normalizeEntry) };
+          setLexicon(norm);
+          setOpenFilename(f.name);
+          // reset filters
+          setSearch(''); setTermFilter(''); setDefFilter(''); setStatusFilter('all'); setScopeFilter('all');
+        }catch(err){
+          if (String(err)?.includes('AbortError')) return;
+          alert('Open failed: ' + (err?.message || err));
+        }
+      }
+
+      function clearLexicon(){
+        setLexicon(null);
+        setOpenFilename('');
+        setSearch(''); setTermFilter(''); setDefFilter(''); setStatusFilter('all'); setScopeFilter('all');
+      }
+
+      async function saveAsJSON(){
+        if (!lexicon) return;
+        const payload = serializeLexicon(lexicon);
+        const suggested = openFilename || `lexicon_${lexicon?.meta?.language || 'target'}_to_${lexicon?.meta?.nativeLang || 'native'}.json`;
+
+        if (window.showSaveFilePicker) {
+          try{
+            const h = await window.showSaveFilePicker({
+              suggestedName: suggested,
+              types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }]
+            });
+            const w = await h.createWritable();
+            await w.write(payload);
+            await w.close();
+            const f = await h.getFile();
+            setOpenFilename(f.name); // reflect chosen name
+            return;
+          }catch(err){
+            if (String(err)?.includes('AbortError')) return;
+          }
+        }
+        download(suggested, payload);
+      }
+
+      function updateEntry(idx, patch){
+        setLexicon(prev => {
+          const next = {...prev};
+          next.entries = prev.entries.slice();
+          next.entries[idx] = {...next.entries[idx], ...patch};
+          next.entries[idx].status = clamp04(next.entries[idx].status);
+          if (!Array.isArray(next.entries[idx].english)) {
+            next.entries[idx].english = String(next.entries[idx].english||'').split('\n').map(s=>s.trim()).filter(Boolean);
+          }
+          return next;
+        });
+      }
+
+      function addBlankEntry(){
+        if (!lexicon) return;
+        setLexicon(prev => ({
+          ...prev,
+          entries: [
+            ...prev.entries,
+            { term: '', english: [], status: 1, scope: 'word', notes: '' }
+          ]
+        }));
+      }
+
+      function deleteEntry(idx){
+        if (!lexicon) return;
+        setLexicon(prev => {
+          const next = {...prev};
+          next.entries = prev.entries.slice();
+          next.entries.splice(idx, 1);
+          return next;
+        });
+      }
+
+      const filtered = useMemo(()=>{
+        if (!lexicon) return [];
+        let rows = lexicon.entries;
+
+        const q = nfcLower(search);
+        if (q) {
+          rows = rows.filter(e =>
+            nfcLower(e.term).includes(q) ||
+            (e.english||[]).some(d => nfcLower(d).includes(q)) ||
+            nfcLower(e.notes||'').includes(q)
+          );
+        }
+        const t = nfcLower(termFilter);
+        if (t) rows = rows.filter(e => nfcLower(e.term).includes(t));
+
+        const d = nfcLower(defFilter);
+        if (d) rows = rows.filter(e => (e.english||[]).some(x => nfcLower(x).includes(d)));
+
+        if (statusFilter !== 'all') {
+          const s = Number(statusFilter);
+          rows = rows.filter(e => clamp04(e.status) === s);
+        }
+        if (scopeFilter !== 'all') {
+          rows = rows.filter(e => (e.scope || 'word') === scopeFilter);
+        }
+        return rows;
+      }, [lexicon, search, termFilter, defFilter, statusFilter, scopeFilter]);
+
+      return (
+        <div className="max-w-6xl mx-auto p-4">
+          <h1 className="text-2xl font-bold mb-1">
+            Lexicon Editor
+          </h1>
+          <p className="text-slate-600 mb-4">
+            Open a JSON lexicon, edit, then <strong>Save As…</strong> to choose (or overwrite) a filename.
+          </p>
+
+          <div className="flex flex-wrap gap-2 mb-3">
+            <button
+              className="px-3 py-2 rounded-xl shadow border bg-white hover:bg-slate-50"
+              onClick={openFile}
+            >
+              Open…
+            </button>
+
+            <button
+              className="px-3 py-2 rounded-xl shadow border bg-white hover:bg-slate-50 disabled:opacity-50"
+              disabled={!lexicon}
+              onClick={clearLexicon}
+            >
+              Clear Lexicon
+            </button>
+
+            <button
+              className="px-3 py-2 rounded-xl shadow border text-white bg-slate-900 hover:bg-slate-800 disabled:opacity-50"
+              disabled={!lexicon}
+              onClick={saveAsJSON}
+              title="Choose a file name or overwrite an existing file"
+            >
+              Save As…
+            </button>
+
+            <button
+              className="px-3 py-2 rounded-xl shadow border bg-white hover:bg-slate-50 disabled:opacity-50"
+              disabled={!lexicon}
+              onClick={addBlankEntry}
+            >
+              Add Entry
+            </button>
+          </div>
+
+          {openFilename && lexicon && (
+            <div className="mb-2 text-xs text-slate-600">
+              Open file: <span className="font-medium">{openFilename}</span> • Entries: {lexicon.entries.length} • Showing: {filtered.length}
+            </div>
+          )}
+
+          {!lexicon ? (
+            <div className="p-6 bg-white rounded-2xl shadow border text-slate-500">
+              No lexicon loaded yet.
+            </div>
+          ) : (
+            <>
+              {/* Filters */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
+                <div className="p-3 bg-white rounded-2xl shadow border">
+                  <div className="text-xs text-slate-500 mb-1">Meta</div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <label className="text-sm">Language
+                      <input
+                        className="mt-1 w-full border rounded px-2 py-1"
+                        value={lexicon.meta?.language || ''}
+                        onChange={e=>setLexicon(prev=>({...prev, meta:{...(prev.meta||{}), language:e.target.value}}))}
+                      />
+                    </label>
+                    <label className="text-sm">Native Lang
+                      <input
+                        className="mt-1 w-full border rounded px-2 py-1"
+                        value={lexicon.meta?.nativeLang || ''}
+                        onChange={e=>setLexicon(prev=>({...prev, meta:{...(prev.meta||{}), nativeLang:e.target.value}}))}
+                      />
+                    </label>
+                  </div>
+                </div>
+
+                <div className="p-3 bg-white rounded-2xl shadow border md:col-span-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+                    <label className="text-sm">Global Search
+                      <input
+                        className="mt-1 w-full border rounded px-2 py-1"
+                        placeholder="term, definition, or notes"
+                        value={search}
+                        onChange={e=>setSearch(e.target.value)}
+                      />
+                    </label>
+                    <label className="text-sm">Term
+                      <input
+                        className="mt-1 w-full border rounded px-2 py-1"
+                        value={termFilter}
+                        onChange={e=>setTermFilter(e.target.value)}
+                      />
+                    </label>
+                    <label className="text-sm">Definition
+                      <input
+                        className="mt-1 w-full border rounded px-2 py-1"
+                        value={defFilter}
+                        onChange={e=>setDefFilter(e.target.value)}
+                      />
+                    </label>
+                    <div className="grid grid-cols-2 gap-2">
+                      <label className="text-sm">Status
+                        <select
+                          className="mt-1 w-full border rounded px-2 py-1"
+                          value={statusFilter}
+                          onChange={e=>setStatusFilter(e.target.value)}
+                        >
+                          <option value="all">All</option>
+                          {[0,1,2,3,4].map(n => (
+                            <option key={n} value={n}>{n} – {STATUS_NAMES[n]}</option>
+                          ))}
+                        </select>
+                      </label>
+                      <label className="text-sm">Scope
+                        <select
+                          className="mt-1 w-full border rounded px-2 py-1"
+                          value={scopeFilter}
+                          onChange={e=>setScopeFilter(e.target.value)}
+                        >
+                          <option value="all">All</option>
+                          <option value="word">word</option>
+                          <option value="form">form</option>
+                          <option value="phrase">phrase</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                  <div className="mt-2 text-xs text-slate-600">
+                    Filters apply live; clear fields or set to “All” to widen results.
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow border overflow-x-auto">
+                <table className="min-w-full text-sm">
+                  <thead className="bg-slate-50 text-slate-700">
+                    <tr>
+                      <th className="text-left px-3 py-2 w-48">Term</th>
+                      <th className="text-left px-3 py-2">Definitions (native)</th>
+                      <th className="text-left px-3 py-2 w-28">Status</th>
+                      <th className="text-left px-3 py-2 w-28">Scope</th>
+                      <th className="text-left px-3 py-2 w-64">Notes</th>
+                      <th className="text-left px-3 py-2 w-24">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y">
+                    {filtered.map((e, idx) => {
+                      const globalIdx = lexicon.entries.indexOf(e);
+                      return (
+                        <tr key={globalIdx} className="align-top">
+                          <td className="px-3 py-2">
+                            <input
+                              className="w-full border rounded px-2 py-1"
+                              value={e.term}
+                              onChange={ev=>updateEntry(globalIdx, { term: ev.target.value })}
+                            />
+                          </td>
+                          <td className="px-3 py-2">
+                            <textarea
+                              className="w-full border rounded px-2 py-1"
+                              rows="3"
+                              placeholder="One meaning per line"
+                              value={(e.english || []).join('\n')}
+                              onChange={ev=>{
+                                const lines = ev.target.value.split('\n').map(s=>s.trim()).filter(Boolean);
+                                updateEntry(globalIdx, { english: lines });
+                              }}
+                            ></textarea>
+                          </td>
+                          <td className="px-3 py-2">
+                            <select
+                              className="w-full border rounded px-2 py-1"
+                              value={clamp04(e.status)}
+                              onChange={ev=>updateEntry(globalIdx, { status: Number(ev.target.value) })}
+                            >
+                              {[0,1,2,3,4].map(n => (
+                                <option key={n} value={n}>{n} – {STATUS_NAMES[n]}</option>
+                              ))}
+                            </select>
+                          </td>
+                          <td className="px-3 py-2">
+                            <select
+                              className="w-full border rounded px-2 py-1"
+                              value={e.scope || 'word'}
+                              onChange={ev=>updateEntry(globalIdx, { scope: ev.target.value })}
+                            >
+                              <option value="word">word</option>
+                              <option value="form">form</option>
+                              <option value="phrase">phrase</option>
+                            </select>
+                          </td>
+                          <td className="px-3 py-2">
+                            <input
+                              className="w-full border rounded px-2 py-1"
+                              value={e.notes || ''}
+                              onChange={ev=>updateEntry(globalIdx, { notes: ev.target.value })}
+                            />
+                          </td>
+                          <td className="px-3 py-2">
+                            <button
+                              className="px-2 py-1 rounded border shadow bg-white hover:bg-slate-50"
+                              onClick={()=>deleteEntry(globalIdx)}
+                            >
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                    {filtered.length === 0 && (
+                      <tr><td colSpan="6" className="px-3 py-6 text-center text-slate-500">No matching entries.</td></tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+  </script>
+</body>
+</html>
