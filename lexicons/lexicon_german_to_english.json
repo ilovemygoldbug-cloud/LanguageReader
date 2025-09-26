@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "source": "unified",
+    "version": 2,
+    "language": "de",
+    "nativeLang": "en"
+  },
+  "entries": [
+    { "term": "Hund", "native": ["dog"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Katze", "native": ["cat"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Haus", "native": ["house"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Baum", "native": ["tree"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Auto", "native": ["car"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Buch", "native": ["book"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Wasser", "native": ["water"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Milch", "native": ["milk"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Brot", "native": ["bread"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Freund", "native": ["friend"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Mutter", "native": ["mother"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Vater", "native": ["father"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Kind", "native": ["child"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Schule", "native": ["school"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Arbeit", "native": ["work"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Stadt", "native": ["city"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Berg", "native": ["mountain"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "See", "native": ["lake"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Sonne", "native": ["sun"], "status": 1, "scope": "word", "notes": "" },
+    { "term": "Mond", "native": ["moon"], "status": 1, "scope": "word", "notes": "" }
+  ]
+}
