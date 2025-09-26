@@ -1,6 +1,8 @@
 # LanguageReader
 This is a program for reading texts in any target language and getting translations in native language
 
+Here's a video of [my demo on Youtube](url). https://youtu.be/rU-ijVVMTVk
+
 LEXICON
 You can use my GPT to create a starter dictionary at https://chatgpt.com/g/g-68c7220a8fe48191b80dce95d540d045-json-file-generator
 Just tell it your native and target language and ask it to generate a file with about 100 common words
