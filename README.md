@@ -1,3 +1,6 @@
+<b>Demo</B><br>
+<a href="https://youtu.be/qnXdPcCJVck">You can watch a Youtube video demo of this software</a><br>
+
 <b>Installation</b><br>
 <ul>
 <li>Go to the releases and click on the most recent one.
