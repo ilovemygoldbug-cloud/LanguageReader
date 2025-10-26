@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "source": "unified",
+    "version": 2,
+    "language": "de",
+    "nativeLang": "en"
+  },
+  "entries": [
+    {
+      "target": "aber",
+      "native": [
+        "but"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "contrast conjunction",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-18",
+          "ForNext": "2025-10-25",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-18",
+          "RevNext": "2025-10-25",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "Bitte",
+      "native": [
+        "please",
+        "you’re welcome"
+      ],
+      "status": 4,
+      "scope": "word",
+      "notes": "politeness term, dual meaning",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-18",
+          "ForNext": "2025-10-25",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-18",
+          "RevNext": "2025-10-25",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "Danke",
+      "native": [
+        "thank you",
+        "thanks"
+      ],
+      "status": 4,
+      "scope": "word",
+      "notes": "expression of gratitude",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-18",
+          "ForNext": "2025-10-25",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-18",
+          "RevNext": "2025-10-25",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "essen",
+      "native": [
+        "to eat"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "verb",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-18",
+          "ForNext": "2025-10-25",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-18",
+          "RevNext": "2025-10-25",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "Guten Morgen",
+      "native": [
+        "good morning"
+      ],
+      "status": 2,
+      "scope": "phrase",
+      "notes": "common greeting",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-18",
+          "ForNext": "2025-10-25",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-18",
+          "RevNext": "2025-10-25",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "Haus",
+      "native": [
+        "house",
+        "home"
+      ],
+      "status": 4,
+      "scope": "word",
+      "notes": "noun, neuter",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-18",
+          "ForNext": "2025-10-25",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-18",
+          "RevNext": "2025-10-25",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "Ich liebe dich",
+      "native": [
+        "I love you"
+      ],
+      "status": 3,
+      "scope": "phrase",
+      "notes": "romantic phrase",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-18",
+          "ForNext": "2025-10-25",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-18",
+          "RevNext": "2025-10-25",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "und",
+      "native": [
+        "and"
+      ],
+      "status": 4,
+      "scope": "word",
+      "notes": "common conjunction",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-18",
+          "ForNext": "2025-10-25",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-18",
+          "RevNext": "2025-10-25",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "weil",
+      "native": [
+        "because"
+      ],
+      "status": 2,
+      "scope": "word",
+      "notes": "causal conjunction",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-18",
+          "ForNext": "2025-10-25",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-18",
+          "RevNext": "2025-10-25",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "Wie geht’s?",
+      "native": [
+        "how are you?"
+      ],
+      "status": 2,
+      "scope": "phrase",
+      "notes": "informal greeting",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-18",
+          "ForNext": "2025-10-25",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-18",
+          "RevNext": "2025-10-25",
+          "RevEasy": 0
+        }
+      }
+    }
+  ]
+}

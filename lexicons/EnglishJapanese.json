@@ -1,0 +1,265 @@
+{
+  "meta": {
+    "source": "unified",
+    "version": 2,
+    "language": "ja",
+    "nativeLang": "en"
+  },
+  "entries": [
+    {
+      "target": "ありがとう",
+      "native": [
+        "thank you"
+      ],
+      "status": 4,
+      "scope": "phrase",
+      "notes": "Casual thank you.",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-26",
+          "ForNext": "2025-11-02",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-26",
+          "RevNext": "2025-11-02",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "いいえ",
+      "native": [
+        "no"
+      ],
+      "status": 2,
+      "scope": "word",
+      "notes": "Negative response.",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-26",
+          "ForNext": "2025-11-03",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-26",
+          "RevNext": "2025-11-03",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "おはよう",
+      "native": [
+        "good morning"
+      ],
+      "status": 4,
+      "scope": "phrase",
+      "notes": "Morning greeting; casual.",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-26",
+          "ForNext": "2025-11-02",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-26",
+          "RevNext": "2025-11-02",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "お願いします",
+      "native": [
+        "please",
+        "I request"
+      ],
+      "status": 2,
+      "scope": "phrase",
+      "notes": "Polite request or favor.",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-26",
+          "ForNext": "2025-11-04",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-26",
+          "RevNext": "2025-11-04",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "こんにちは",
+      "native": [
+        "hello",
+        "hi"
+      ],
+      "status": 4,
+      "scope": "word",
+      "notes": "Common greeting used during the day.",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-26",
+          "ForNext": "2025-11-02",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-26",
+          "RevNext": "2025-11-02",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "こんばんは",
+      "native": [
+        "good evening"
+      ],
+      "status": 2,
+      "scope": "phrase",
+      "notes": "Evening greeting.",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-26",
+          "ForNext": "2025-11-04",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-26",
+          "RevNext": "2025-11-04",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "さようなら",
+      "native": [
+        "goodbye"
+      ],
+      "status": 4,
+      "scope": "phrase",
+      "notes": "Used when parting for a while.",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-26",
+          "ForNext": "2025-11-03",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-26",
+          "RevNext": "2025-11-03",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "すみません",
+      "native": [
+        "excuse me",
+        "sorry"
+      ],
+      "status": 4,
+      "scope": "phrase",
+      "notes": "Used to apologize or get attention.",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-26",
+          "ForNext": "2025-11-04",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-26",
+          "RevNext": "2025-11-04",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "はい",
+      "native": [
+        "yes"
+      ],
+      "status": 2,
+      "scope": "word",
+      "notes": "Affirmative response.",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-26",
+          "ForNext": "2025-11-03",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-26",
+          "RevNext": "2025-11-03",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "はじめてのカフェ",
+      "native": [
+        "My First Time at a Cafe"
+      ],
+      "status": 2,
+      "scope": "word",
+      "notes": "",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-25",
+          "ForNext": "2025-10-26",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-25",
+          "RevNext": "2025-10-26",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "水",
+      "native": [
+        "water"
+      ],
+      "status": 2,
+      "scope": "word",
+      "notes": "Basic noun for water.",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-26",
+          "ForNext": "2025-11-05",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-26",
+          "RevNext": "2025-11-05",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "日本語ストーリー",
+      "native": [
+        "Japanese Story"
+      ],
+      "status": 2,
+      "scope": "word",
+      "notes": "",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-25",
+          "ForNext": "2025-10-26",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-25",
+          "RevNext": "2025-10-26",
+          "RevEasy": 0
+        }
+      }
+    }
+  ]
+}

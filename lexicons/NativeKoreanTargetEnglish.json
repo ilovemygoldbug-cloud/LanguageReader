@@ -1,0 +1,305 @@
+{
+  "meta": {
+    "source": "unified",
+    "version": 2,
+    "language": "en",
+    "nativeLang": "ko"
+  },
+  "entries": [
+    {
+      "target": "but to them",
+      "native": [
+        "그러나 그들에게는"
+      ],
+      "status": 3,
+      "scope": "phrase",
+      "notes": "test",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-07",
+          "ForNext": "2025-10-08",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-10",
+          "RevNext": "2025-10-17",
+          "RevEasy": 0
+        }
+      },
+      "tags": []
+    },
+    {
+      "target": "cool",
+      "native": [
+        "멋지다"
+      ],
+      "status": 2,
+      "scope": "word",
+      "notes": "",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-07",
+          "ForNext": "2025-10-08",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-07",
+          "RevNext": "2025-10-08",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "dream",
+      "native": [
+        "꿈"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "꿈 — 잠잘 때 꾸는 생각 또는 희망",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-08",
+          "ForNext": "2025-10-16",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-08",
+          "RevNext": "2025-10-16",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "friend",
+      "native": [
+        "친구"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "친구 — 함께 어울리고 신뢰할 수 있는 사람",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-08",
+          "ForNext": "2025-10-14",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-08",
+          "RevNext": "2025-10-14",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "group",
+      "native": [
+        "그룹"
+      ],
+      "status": 2,
+      "scope": "word",
+      "notes": "",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-17",
+          "ForNext": "2025-10-18",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-17",
+          "RevNext": "2025-10-18",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "home",
+      "native": [
+        "집"
+      ],
+      "status": 2,
+      "scope": "word",
+      "notes": "집 — 사람이 거주하는 곳",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-08",
+          "ForNext": "2025-10-12",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-08",
+          "RevNext": "2025-10-12",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "hope",
+      "native": [
+        "희망"
+      ],
+      "status": 4,
+      "scope": "word",
+      "notes": "희망 — 바라는 마음이나 기대",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-08",
+          "ForNext": "2025-10-19",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-08",
+          "RevNext": "2025-10-19",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "light",
+      "native": [
+        "빛"
+      ],
+      "status": 2,
+      "scope": "word",
+      "notes": "빛 — 눈으로 볼 수 있게 하는 에너지",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-08",
+          "ForNext": "2025-10-11",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-08",
+          "RevNext": "2025-10-11",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "love",
+      "native": [
+        "사랑"
+      ],
+      "status": 4,
+      "scope": "word",
+      "notes": "사랑 — 깊은 애정이나 감정",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-08",
+          "ForNext": "2025-10-18",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-08",
+          "RevNext": "2025-10-18",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "peace",
+      "native": [
+        "평화"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "평화 — 전쟁이나 다툼이 없는 상태",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-08",
+          "ForNext": "2025-10-17",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-08",
+          "RevNext": "2025-10-17",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "pointed",
+      "native": [
+        "지적된"
+      ],
+      "status": 2,
+      "scope": "word",
+      "notes": "",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-09",
+          "ForNext": "2025-10-10",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-09",
+          "RevNext": "2025-10-10",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "time",
+      "native": [
+        "시간"
+      ],
+      "status": 4,
+      "scope": "word",
+      "notes": "시간 — 어떤 일이 일어나는 시점 또는 기간",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-08",
+          "ForNext": "2025-10-15",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-08",
+          "RevNext": "2025-10-15",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "truth",
+      "native": [
+        "진실"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "진실 — 거짓이 아닌 사실",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-08",
+          "ForNext": "2025-10-13",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-08",
+          "RevNext": "2025-10-13",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "water",
+      "native": [
+        "물"
+      ],
+      "status": 4,
+      "scope": "word",
+      "notes": "물 — 생명 유지에 필수적인 액체",
+      "review": {
+        "forward": {
+          "ForLast": "2025-10-08",
+          "ForNext": "2025-10-20",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-10-08",
+          "RevNext": "2025-10-20",
+          "RevEasy": 0
+        }
+      }
+    }
+  ]
+}
