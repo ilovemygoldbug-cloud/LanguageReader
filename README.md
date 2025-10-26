@@ -10,7 +10,7 @@
 <ul>
 <li>Starter lexicons are in the lexicons folder on github
 <li>Download whichever ones you desire.
-<li>If you need one that is not there you can let me know or you can go to <a href="https://chatgpt.com/g/g-68c7220a8fe48191b80dce95d540d045-json-lexicon-generator">my GPT Lexicon Generator</a> and type in:<br>
+<li>If you need one that is not there you can let me know or you can go to <a target="_blank" href="https://chatgpt.com/g/g-68c7220a8fe48191b80dce95d540d045-json-lexicon-generator">my GPT Lexicon Generator</a> and type in:<br>
 Native: (your language) Target: (learning language) and it will generate a starter lexicon for you.
 <li>For example, Native: English Target: Russian
 </ul>
