@@ -1,0 +1,302 @@
+{
+  "meta": {
+    "source": "unified",
+    "version": 2,
+    "language": "en",
+    "nativeLang": "es"
+  },
+  "entries": [
+    {
+      "target": "book",
+      "native": [
+        "libro"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "noun",
+      "review": {
+        "forward": {
+          "ForLast": "2025-11-16",
+          "ForNext": "2025-12-16",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-11-16",
+          "RevNext": "2025-12-16",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "friend",
+      "native": [
+        "amigo"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "noun",
+      "review": {
+        "forward": {
+          "ForLast": "2025-11-16",
+          "ForNext": "2025-12-16",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-11-16",
+          "RevNext": "2025-12-16",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "house",
+      "native": [
+        "casa"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "noun",
+      "review": {
+        "forward": {
+          "ForLast": "2025-11-16",
+          "ForNext": "2025-12-16",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-11-16",
+          "RevNext": "2025-12-16",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "Marjorie",
+      "native": [],
+      "status": 0,
+      "scope": "word",
+      "notes": "",
+      "review": {
+        "forward": {
+          "ForLast": "2025-11-15",
+          "ForNext": "2125-11-16",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-11-15",
+          "RevNext": "2125-11-16",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "rhetoric",
+      "native": [
+        "retórica"
+      ],
+      "status": 2,
+      "scope": "word",
+      "notes": "",
+      "review": {
+        "forward": {
+          "ForLast": "2025-11-15",
+          "ForNext": "2025-11-16",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-11-15",
+          "RevNext": "2025-11-16",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "road",
+      "native": [
+        "camino"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "noun",
+      "review": {
+        "forward": {
+          "ForLast": "2025-11-16",
+          "ForNext": "2025-12-16",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-11-16",
+          "RevNext": "2025-12-16",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "said",
+      "native": [
+        "dijo"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "",
+      "review": {
+        "forward": {
+          "ForLast": "2025-11-15",
+          "ForNext": "2025-11-16",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-11-15",
+          "RevNext": "2025-11-16",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "street",
+      "native": [
+        "calle"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "noun",
+      "review": {
+        "forward": {
+          "ForLast": "2025-11-16",
+          "ForNext": "2025-12-16",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-11-16",
+          "RevNext": "2025-12-16",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "sun",
+      "native": [
+        "sol"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "basic noun",
+      "review": {
+        "forward": {
+          "ForLast": "2025-11-16",
+          "ForNext": "2025-12-16",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-11-16",
+          "RevNext": "2025-12-16",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "Sunday",
+      "native": [
+        "Domingo"
+      ],
+      "status": 4,
+      "scope": "word",
+      "notes": "",
+      "review": {
+        "forward": {
+          "ForLast": "2025-11-15",
+          "ForNext": "2125-11-16",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-11-15",
+          "RevNext": "2125-11-16",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "to eat",
+      "native": [
+        "comer"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "verb",
+      "review": {
+        "forward": {
+          "ForLast": "2025-11-16",
+          "ForNext": "2025-12-16",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-11-16",
+          "RevNext": "2025-12-16",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "to run",
+      "native": [
+        "correr"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "verb",
+      "review": {
+        "forward": {
+          "ForLast": "2025-11-16",
+          "ForNext": "2025-12-16",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-11-16",
+          "RevNext": "2025-12-16",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "to speak",
+      "native": [
+        "hablar"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "verb",
+      "review": {
+        "forward": {
+          "ForLast": "2025-11-16",
+          "ForNext": "2025-12-16",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-11-16",
+          "RevNext": "2025-12-16",
+          "RevEasy": 0
+        }
+      }
+    },
+    {
+      "target": "water",
+      "native": [
+        "agua"
+      ],
+      "status": 3,
+      "scope": "word",
+      "notes": "basic noun",
+      "review": {
+        "forward": {
+          "ForLast": "2025-11-16",
+          "ForNext": "2025-12-16",
+          "ForEasy": 0
+        },
+        "reverse": {
+          "RevLast": "2025-11-16",
+          "RevNext": "2025-12-16",
+          "RevEasy": 0
+        }
+      }
+    }
+  ]
+}
