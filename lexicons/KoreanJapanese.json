@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "source": "unified",
+    "version": 2,
+    "language": "ja",
+    "nativeLang": "ko"
+  },
+  "entries": [
+    {
+      "target": "こんにちは",
+      "native": ["안녕하세요"],
+      "status": 0,
+      "scope": "word",
+      "notes": "hello",
+      "review": {
+        "forward": { "ForLast": "", "ForNext": "", "ForEasy": 0 },
+        "reverse": { "RevLast": "", "RevNext": "", "RevEasy": 0 }
+      }
+    },
+    {
+      "target": "ありがとう",
+      "native": ["고마워", "감사합니다"],
+      "status": 0,
+      "scope": "word",
+      "notes": "thank you",
+      "review": {
+        "forward": { "ForLast": "", "ForNext": "", "ForEasy": 0 },
+        "reverse": { "RevLast": "", "RevNext": "", "RevEasy": 0 }
+      }
+    },
+    {
+      "target": "はい",
+      "native": ["네", "예"],
+      "status": 0,
+      "scope": "word",
+      "notes": "yes",
+      "review": {
+        "forward": { "ForLast": "", "ForNext": "", "ForEasy": 0 },
+        "reverse": { "RevLast": "", "RevNext": "", "RevEasy": 0 }
+      }
+    },
+    {
+      "target": "いいえ",
+      "native": ["아니요"],
+      "status": 0,
+      "scope": "word",
+      "notes": "no",
+      "review": {
+        "forward": { "ForLast": "", "ForNext": "", "ForEasy": 0 },
+        "reverse": { "RevLast": "", "RevNext": "", "RevEasy": 0 }
+      }
+    },
+    {
+      "target": "すみません",
+      "native": ["실례합니다", "죄송합니다"],
+      "status": 0,
+      "scope": "word",
+      "notes": "excuse me / sorry",
+      "review": {
+        "forward": { "ForLast": "", "ForNext": "", "ForEasy": 0 },
+        "reverse": { "RevLast": "", "RevNext": "", "RevEasy": 0 }
+      }
+    },
+    {
+      "target": "お願いします",
+      "native": ["부탁합니다"],
+      "status": 0,
+      "scope": "word",
+      "notes": "please",
+      "review": {
+        "forward": { "ForLast": "", "ForNext": "", "ForEasy": 0 },
+        "reverse": { "RevLast": "", "RevNext": "", "RevEasy": 0 }
+      }
+    },
+    {
+      "target": "水",
+      "native": ["물"],
+      "status": 0,
+      "scope": "word",
+      "notes": "water",
+      "review": {
+        "forward": { "ForLast": "", "ForNext": "", "ForEasy": 0 },
+        "reverse": { "RevLast": "", "RevNext": "", "RevEasy": 0 }
+      }
+    },
+    {
+      "target": "食べる",
+      "native": ["먹다"],
+      "status": 0,
+      "scope": "word",
+      "notes": "to eat",
+      "review": {
+        "forward": { "ForLast": "", "ForNext": "", "ForEasy": 0 },
+        "reverse": { "RevLast": "", "RevNext": "", "RevEasy": 0 }
+      }
+    },
+    {
+      "target": "行く",
+      "native": ["가다"],
+      "status": 0,
+      "scope": "word",
+      "notes": "to go",
+      "review": {
+        "forward": { "ForLast": "", "ForNext": "", "ForEasy": 0 },
+        "reverse": { "RevLast": "", "RevNext": "", "RevEasy": 0 }
+      }
+    },
+    {
+      "target": "見る",
+      "native": ["보다"],
+      "status": 0,
+      "scope": "word",
+      "notes": "to see / to watch",
+      "review": {
+        "forward": { "ForLast": "", "ForNext": "", "ForEasy": 0 },
+        "reverse": { "RevLast": "", "RevNext": "", "RevEasy": 0 }
+      }
+    }
+  ]
+}
